@@ -1,0 +1,160 @@
+/* ===== Reset y Fuente ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa, #e0e5ec);
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    position: relative;
+    height: 45vh;
+    background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 28, 61, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1.2s ease;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #eaeaea;
+}
+
+/* ===== Grid de Portafolios ===== */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+    padding: 60px 8%;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 35px 25px;
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at top left, rgba(255, 220, 150, 0.15), transparent 60%);
+    transform: rotate(25deg);
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-3deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card h2 {
+    color: #0d2b50;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.card:hover h2 {
+    color: #004aad;
+}
+
+.btn {
+    background: linear-gradient(135deg, #004aad, #0085ff);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 10px rgba(0, 80, 200, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover .btn {
+    background: linear-gradient(135deg, #0057d8, #0099ff);
+    transform: scale(1.08);
+    box-shadow: 0 8px 15px rgba(0, 80, 200, 0.4);
+}
+
+/* ===== Footer ===== */
+.footer {
+    text-align: center;
+    padding: 25px;
+    background: #0d2b50;
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+/* ===== Animaciones ===== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
