@@ -12,8 +12,71 @@ body {
     overflow-x: hidden;
 }
 
-/* ===== Hero Section ===== */
+/* == NAVBAR RESPONSIVE == */
+.navbar {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #0d2b50;
+}
+
+/* Menú Desktop */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #0d2b50;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #0073ff;
+}
+
+/* Botón Hamburguesa */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 26px;
+    height: 3px;
+    background: #0d2b50;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+/* == HERO SECTION == */
 .hero {
+    margin-top: 70px; 
     position: relative;
     height: 45vh;
     background: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
@@ -52,7 +115,7 @@ body {
     color: #eaeaea;
 }
 
-/* ===== Grid de Portafolios ===== */
+/* == GRID DE PORTAFOLIOS == */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -127,7 +190,7 @@ body {
     box-shadow: 0 8px 15px rgba(0, 80, 200, 0.4);
 }
 
-/* ===== Footer ===== */
+/* == FOOTER == */
 .footer {
     text-align: center;
     padding: 25px;
@@ -137,7 +200,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ===== Animaciones ===== */
+/* == ANIMACIONES == */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -149,7 +212,36 @@ body {
     }
 }
 
-/* ===== Responsive ===== */
+/* == RESPONSIVE NAVBAR == */
+@media (max-width: 850px) {
+    .nav-menu {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        width: 230px;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        box-shadow: -3px 5px 15px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(100%);
+        transition: 0.35s ease;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+}
+
+/* == Responsive General == */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 1.9rem;

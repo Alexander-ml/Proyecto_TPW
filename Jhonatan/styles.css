@@ -1,3 +1,105 @@
+/* ==== NAVBAR RESPONSIVE ==== */
+
+.navbar {
+  width: 100%;
+  background: #0d3b66;
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #b8dafe;
+}
+
+/* ===== ICONO HAMBURGUESA ===== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 850px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #0d3b66;
+    width: 220px;
+    flex-direction: column;
+    padding: 18px 0;
+    border-radius: 0 0 0 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-15px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-menu li {
+    padding: 10px 20px;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+  }
+}
+
 /* ===== CONFIGURACIÓN GENERAL ===== */
 * {
   margin: 0;
@@ -10,7 +112,7 @@ body {
   background: linear-gradient(135deg, #eef3f8, #f9fcff);
   color: #333;
   line-height: 1.6;
-  padding: 40px 20px;
+  padding: 100px 20px 40px; 
 }
 
 .cv-container {
@@ -26,6 +128,7 @@ body {
 .cv-container:hover {
   transform: translateY(-5px);
 }
+
 
 /* ===== ENCABEZADO ===== */
 .header {
@@ -79,6 +182,7 @@ body {
   color: #0036a0;
 }
 
+
 /* ===== SECCIONES ===== */
 .section {
   margin-bottom: 40px;
@@ -106,6 +210,7 @@ body {
   color: #444;
 }
 
+
 /* ===== PERFIL PROFESIONAL ===== */
 .profile-summary p {
   text-align: justify;
@@ -115,6 +220,7 @@ body {
   border-radius: 12px;
   box-shadow: inset 0 0 10px rgba(0, 90, 255, 0.1);
 }
+
 
 /* ===== HABILIDADES TÉCNICAS ===== */
 .skills-grid {
@@ -161,6 +267,7 @@ body {
   font-size: 0.95em;
 }
 
+
 /* ===== COMPETENCIAS PERSONALES ===== */
 .competence-list {
   display: flex;
@@ -186,6 +293,7 @@ body {
   box-shadow: 5px 8px 20px rgba(0, 90, 255, 0.2);
 }
 
+
 /* ===== OBJETIVO PROFESIONAL ===== */
 .objective p {
   background: #f5f9ff;
@@ -198,21 +306,17 @@ body {
   text-align: justify;
 }
 
+
 /* ===== ANIMACIONES SUAVES ===== */
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .section, .skill-card, .competence-card {
   animation: fadeInUp 0.8s ease forwards;
 }
+
 
 /* ===== BOTÓN DE REGRESO ===== */
 .back-button-container {
@@ -250,16 +354,11 @@ body {
   transform: translateX(-5px);
 }
 
+
 /* Animación de entrada */
 @keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .back-button-container {

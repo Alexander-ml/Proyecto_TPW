@@ -9,6 +9,32 @@
 </head>
 
 <body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+      <div class="nav-container">
+
+          <div class="nav-logo">
+              <a href="../Principal/index.html">Portafolio</a>
+          </div>
+
+          <button class="nav-toggle" id="navToggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+
+          <ul class="nav-menu" id="navMenu">
+              <li><a href="#education">Formación</a></li>
+              <li><a href="#profile-summary">Perfil</a></li>
+              <li><a href="#skills">Habilidades</a></li>
+              <li><a href="#competences">Competencias</a></li>
+              <li><a href="#objective">Objetivo</a></li>
+          </ul>
+
+      </div>
+  </nav>
+
   <div class="cv-container">
 
     <!-- ===== Encabezado ===== -->
@@ -27,7 +53,7 @@
     </header>
 
     <!-- ===== Formación Académica ===== -->
-    <section class="section education">
+    <section class="section education" id="education">
       <h2><i class="fa-solid fa-graduation-cap"></i> Formación Académica</h2>
       <div class="section-content">
         <p><strong>Universidad Tecnológica del Perú (UTP)</strong></p>
@@ -37,7 +63,7 @@
     </section>
 
     <!-- ===== Perfil Profesional ===== -->
-    <section class="section profile-summary">
+    <section class="section profile-summary" id="profile-summary">
       <h2><i class="fa-solid fa-briefcase"></i> Perfil Profesional</h2>
       <p>
         Soy un estudiante de Ingeniería de Sistemas e Informática con una fuerte motivación por el desarrollo tecnológico y la programación.
@@ -47,8 +73,8 @@
       </p>
     </section>
 
-    <!-- ===== Habilidades Técnicas (Mejorada) ===== -->
-    <section class="section skills">
+    <!-- ===== Habilidades Técnicas ===== -->
+    <section class="section skills" id="skills">
       <h2><i class="fa-solid fa-laptop-code"></i> Habilidades Técnicas</h2>
 
       <div class="skills-grid">
@@ -87,7 +113,7 @@
     </section>
 
     <!-- ===== Competencias Personales ===== -->
-    <section class="section competences">
+    <section class="section competences" id="competences">
       <h2><i class="fa-solid fa-gears"></i> Competencias Personales</h2>
       <div class="competence-list">
         <div class="competence-card">Pensamiento lógico y analítico</div>
@@ -99,7 +125,7 @@
     </section>
 
     <!-- ===== Objetivo Profesional ===== -->
-    <section class="section objective">
+    <section class="section objective" id="objective">
       <h2><i class="fa-solid fa-bullseye"></i> Objetivo Profesional</h2>
       <p>
         Consolidar mis conocimientos en desarrollo de software y formar parte de equipos que impulsen soluciones tecnológicas innovadoras,
@@ -115,5 +141,7 @@
     </div>
     
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

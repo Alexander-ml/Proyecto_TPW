@@ -3,11 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolios | César Alexander Medina Linares</title>
+    <title>Portafolios</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Portafolios</div>
+
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#portafolios">Portafolios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header class="hero">
         <div class="overlay"></div>
         <div class="hero-content">
@@ -16,7 +35,7 @@
         </div>
     </header>
 
-    <main class="portfolio-grid">
+    <main class="portfolio-grid" id="portafolios">
         <div class="card" onclick="location.href='../Alexander/indexA.html'">
             <div class="card-content">
                 <h2>César Alexander Medina Linares</h2>
@@ -42,8 +61,11 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contacto">
         <p>2025 - Portafolios de Ingeniería | Creado para la comunidad UTP</p>
     </footer>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
