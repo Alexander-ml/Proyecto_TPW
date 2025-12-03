@@ -20,7 +20,7 @@ document.querySelectorAll(".nav-menu a").forEach(link => {
     });
 });
 
-/* ==== SCROLL SUAVE ==== */
+/* ==== SCROLL ==== */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         e.preventDefault();
@@ -34,36 +34,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-/* ==== ANIMACIÓN AL HACER SCROLL (Fade-Up) ==== */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, { threshold: 0.2 });
+/* ==== HERO SLIDER ==== */
 
-document.querySelectorAll(".card").forEach(card => {
-    card.classList.add("hidden");
-    observer.observe(card);
+// Lista de imágenes
+const heroImages = [
+    "https://i.pinimg.com/1200x/d9/75/68/d97568d55332bd8e62821b0236fdcf3a.jpg",
+    "https://i.pinimg.com/736x/75/de/07/75de0749aa17d31912274fc15ba4545e.jpg",
+    "https://i.pinimg.com/736x/a2/1e/b3/a21eb31c3276ef1e3fad303d407d3549.jpg"
+];
+
+let currentHero = 0;
+const heroSection = document.querySelector(".hero");
+
+// Función que cambia la imagen
+function updateHero() {
+    heroSection.style.background = `url('${heroImages[currentHero]}') center/cover no-repeat`;
+}
+
+// Cambiar imagen automáticamente cada 30s
+setInterval(() => {
+    currentHero = (currentHero + 1) % heroImages.length;
+    updateHero();
+}, 30000);
+
+// Botones manuales
+document.getElementById("nextHero").addEventListener("click", () => {
+    currentHero = (currentHero + 1) % heroImages.length;
+    updateHero();
 });
 
-/* ==== EFECTO PEQUEÑO A LAS CARDS AL HACER CLICK ==== */
-document.querySelectorAll(".card").forEach(card => {
-    card.addEventListener("mousedown", () => {
-        card.style.transform = "scale(0.97)";
-    });
-    card.addEventListener("mouseup", () => {
-        card.style.transform = "";
-    });
+document.getElementById("prevHero").addEventListener("click", () => {
+    currentHero = (currentHero - 1 + heroImages.length) % heroImages.length;
+    updateHero();
 });
 
-/* ==== EFECTO NAVBAR AL HACER SCROLL ==== */
-window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-        navbar.classList.add("scroll");
-    } else {
-        navbar.classList.remove("scroll");
-    }
-});
+// Inicializar imagen
+updateHero();

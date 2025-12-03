@@ -30,6 +30,7 @@
               <li><a href="#skills">Habilidades</a></li>
               <li><a href="#competences">Competencias</a></li>
               <li><a href="#objective">Objetivo</a></li>
+              <li><a href="#comentarios">Comentarios</a></li>
           </ul>
 
       </div>
@@ -128,7 +129,36 @@
         <i class="fa-solid fa-arrow-left"></i> Volver a Portafolios
       </a>
     </div>
-    
+
+    <!-- ===== ENCUESTA / OPINIÓN ===== -->
+    <section class="section feedback-section" id="comentarios">
+      <h2><i class="fa-solid fa-comment-dots"></i> Tu Opinión Importa</h2>
+
+      <form class="feedback-form">
+          <label for="rating">¿Qué te pareció el portafolio?</label>
+          <select id="rating" name="rating" required>
+              <option value="">Selecciona una opción</option>
+              <option value="excelente">Excelente</option>
+              <option value="muy-bueno">Muy Bueno</option>
+              <option value="bueno">Bueno</option>
+              <option value="regular">Regular</option>
+              <option value="malo">Necesita mejorar</option>
+          </select>
+
+          <label for="comment">Comentario adicional:</label>
+          <textarea id="comment" name="comment" placeholder="Escribe tu opinión aquí…" required></textarea>
+
+          <button type="submit" class="feedback-btn">
+              Enviar comentario
+          </button>
+      </form>
+
+      <!-- ==== LISTA DE COMENTARIOS ==== -->
+      <div class="comments-list" id="commentsList">
+        <h3>Comentarios recientes</h3>
+        <p class="no-comments">Aún no hay comentarios. ¡Sé el primero en opinar!</p>
+      </div>
+    </section>
   </div>
 
   <script src="script.js"></script>

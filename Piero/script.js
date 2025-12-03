@@ -42,3 +42,38 @@ window.addEventListener("scroll", () => {
         navbar.classList.remove("scroll");
     }
 });
+
+/* ==== AGREGAR COMENTARIOS DINÁMICAMENTE ==== */
+const commentForm = document.querySelector(".feedback-form");
+const commentsList = document.getElementById("commentsList");
+
+commentForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const rating = document.getElementById("rating").value;
+    const comment = document.getElementById("comment").value;
+
+    if (!rating || !comment.trim()) {
+        alert("Por favor completa todos los campos.");
+        return;
+    }
+
+    // Crear tarjeta de comentario
+    const commentCard = document.createElement("div");
+    commentCard.classList.add("comment-card");
+
+    commentCard.innerHTML = `
+        <p class="comment-rating">Calificación: <strong>${rating}</strong></p>
+        <p>${comment}</p>
+    `;
+
+    // Eliminar mensaje "no hay comentarios"
+    const noCommentsMsg = commentsList.querySelector(".no-comments");
+    if (noCommentsMsg) noCommentsMsg.remove();
+
+    // Agregar comentario a la lista
+    commentsList.appendChild(commentCard);
+
+    // Limpiar formulario
+    commentForm.reset();
+});
